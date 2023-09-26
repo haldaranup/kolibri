@@ -1,6 +1,7 @@
 <template>
 
   <div class="pos-rel">
+    {{ options }}
     <KSelect
       class="birthyear-select"
       :value="selected"
@@ -86,7 +87,7 @@
       makeYearOptions(max, min) {
         return range(max, min, -1).map(n => {
           return {
-            label: this.$formatDate(String(n), { year: 'numeric' }),
+            label: this.$formatDate(new Date().setFullYear(n), { year: 'numeric' }),
             value: String(n),
           };
         });
