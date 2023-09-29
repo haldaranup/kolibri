@@ -86,7 +86,7 @@
       makeYearOptions(max, min) {
         return range(max, min, -1).map(n => {
           return {
-            label: this.$formatDate(String(n), { year: 'numeric' }),
+            label: this.$formatDate(n, { year: 'numeric' }),
             value: String(n),
           };
         });
